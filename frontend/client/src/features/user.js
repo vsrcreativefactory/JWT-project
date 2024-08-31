@@ -1,5 +1,5 @@
 //authentication using Redux
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState = {
     isAuthenticated: false,
@@ -12,17 +12,11 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    increment(state) {
-      state.value++
-    },
-    decrement(state) {
-      state.value--
-    },
-    incrementByAmount(state, action) {
-      state.value += action.payload
-    },
+    resetRegistered: state => {
+      state.registered = false;
+    }
   },
 })
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
-export default counterSlice.reducer
+export const { resetRegistered } = userSlice.actions
+export default userSlice.reducer

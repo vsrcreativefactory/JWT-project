@@ -1,6 +1,9 @@
 import {Link, NavLink} from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+    const {isAuthenticated} = useSelector(state => state.user)
+
     const authlinks = (
         <>
             <li className="nav-item me-3">
@@ -170,8 +173,7 @@ return (
               LogIn
             </NavLink>
           </li> */}
-          {authlinks}
-          {guestLinks}
+          {isAuthenticated ? authlinks : guestLinks}
           
         </ul>
       </div>
