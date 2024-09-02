@@ -76,13 +76,7 @@ const RegisterPage = () => {
                     required
                     />
                 </div>
-                {loading ? (
-                    <div className="spinner-border text-warning m-4" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                  </div>
-                ): (
-                    <button className="btn btn-primary mt-4">Register</button>
-                )}   
+                <button className="btn btn-primary mt-4">Register</button>
             </form>
         </Layout>
     )

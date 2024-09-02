@@ -1,23 +1,17 @@
-const express = require('express')
-const path = require('path')
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
-require('dotenv').config()
+// Use CORS middleware
+app.use(cors());
 
-const registerRoute = require('./routes/auth/register')
+app.use(express.json());
 
-const app = express()
+app.post('/api/users/register', (req, res) => {
+  // Your registration logic here
+});
 
-app.use(express.json()) //middleware
-
-app.use(express.static('client/build'))
-app.get('*', (req, res) => {
-    return res.sendFile(path.resolve(__dirname, 'client','build','index.html'))
-})
-
-const PORT = process.env.PORT || 8000;
-
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
-
-
-// /Users/HP/Desktop/JWT project/JWT_project/frontend/client/build/indexedDB.html
-
+const PORT = 8000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
