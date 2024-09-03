@@ -10,35 +10,35 @@ export const store = configureStore({
 })
 
 
-// const initialState = {
-//     first: {
-//         second: {
-//             third: {
-//                 valOne: '',
-//                 valTwo: '',
-//                 isAuthenticated: false
-//             },
-//             fifth: 'asdf'
-//         },
-//         fourth: 'asdf'
-//     },
-//     sixth: 'asdfgh'
-// }
+const initialState = {
+    first: {
+        second: {
+            third: {
+                valOne: '',
+                valTwo: '',
+                isAuthenticated: false
+            },
+            fifth: 'asdf'
+        },
+        fourth: 'asdf'
+    },
+    sixth: 'asdfgh'
+}
 
-// switch (isAction.type) {
-//     case 'LOGIN_SUCCESS':
-//         state.first.second.third.isAuthenticated = true;
-//         return {
-//             ...state,
-//             first: {
-//                 ...state.first,
-//                 second: {
-//                     ...state.first.second,
-//                     third: {
-//                         ...state.first.second.third,
-//                         isAuthenticated: true
-//                     }
-//                 }
-//             }
-//         }
-// }
+switch (isAction.type) {
+    case 'LOGIN_SUCCESS':
+        state.first.second.third.isAuthenticated = true;
+        return {
+            ...state,
+            first: {
+                ...state.first,
+                second: {
+                    ...state.first.second,
+                    third: {
+                        ...state.first.second.third,
+                        isAuthenticated: true
+                    }
+                }
+            }
+        }
+}
